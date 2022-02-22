@@ -110,7 +110,7 @@ class CarouselMobile {
       .getElementsByClassName("item__content__mobile")[0]
       .classList.add("active_item");
     this.items[index].style.transition = `${this.animationDuration}s ease`;
-    this.items[index].style.transform = `translate3d(0, -20%, 0)`;
+    // this.items[index].style.transform = `translate3d(0, -20%, 0)`;
     this.container.offsetHeight; // force repaint
     this.container.offsetHeight; // force repaint
   }
@@ -298,7 +298,7 @@ class CarouselMobile {
       .getElementsByClassName("item__content__mobile")[0]
       .classList.add("active_item");
     this.items[index].style.transition = `${this.animationDuration}s ease`;
-    this.items[index].style.transform = `translate3d(0, -20%, 0)`;
+    // this.items[index].style.transform = `translate3d(0, -20%, 0)`;
     this.container.offsetHeight; // force repaint
 
     this.moveCallbacks.forEach((cb) => cb(index));
