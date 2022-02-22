@@ -104,6 +104,7 @@ body {
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  margin-top: 40px;
 }
 .void {
   width: 20%;
@@ -169,7 +170,7 @@ body {
 }
 .item__content {
   max-width: 80%;
-  transform: translate(-40%, -75%);
+  transform: translate(-150px, -180px);
   position: absolute;
   padding: 10px;
   display: none;
@@ -180,24 +181,24 @@ body {
 .item__content > p {
   text-align: left;
   font-family: "Founders Grotesk" Condensed Test;
-  font-size: 20px;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.item__content > h5 {
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
   letter-spacing: 0em;
   text-align: left;
 }
-.item__content > h5 {
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 25px;
-  letter-spacing: 0em;
-  text-align: left;
-}
 .item__content > h3 {
-  font-size: 40px;
-  line-height: 30px;
+  font-size: 45px;
+  line-height: 45px;
   letter-spacing: 0em;
   text-align: left;
   background-image: linear-gradient(
