@@ -161,24 +161,53 @@ class CarouselMobile {
     if (this.options.loop === true) {
       return;
     }
-    this.onMove((index) => {
-      if (index === 0 || index === 1) {
-        prevButton.classList.add("carousel__prev--hidden");
-      } else {
-        prevButton.classList.remove("carousel__prev--hidden");
-      }
-      if (this.items[this.currentItem + this.slidesVisible] === undefined) {
-        nextButton.classList.add("carousel__next--hidden");
-      } else {
-        nextButton.classList.remove("carousel__next--hidden");
-      }
-    });
+    // this.onMove((index) => {
+    //   if (index === 0 || index === 1) {
+    //     prevButton.classList.add("carousel__prev--hidden");
+    //   } else {
+    //     prevButton.classList.remove("carousel__prev--hidden");
+    //   }
+    //   if (this.items[this.currentItem + this.slidesVisible] === undefined) {
+    //     nextButton.classList.add("carousel__next--hidden");
+    //   } else {
+    //     nextButton.classList.remove("carousel__next--hidden");
+    //   }
+    // });
   }
 
   /**
    * Crée la pagination dans le DOM
    */
-  createPagination() {}
+  createPagination() {
+    let pagination = this.createDivWithClass("carousel__pagination");
+    let buttons = [];
+    this.element.appendChild(pagination);
+    for (
+      let i = 0;
+      i < this.items.length - 2 * this.offset;
+      i = i + this.options.slidesToScroll
+    ) {
+      let button = this.createDivWithClass("carousel__pagination__button");
+      button.addEventListener("click", () => this.gotoItem(i + this.offset));
+      pagination.appendChild(button);
+      buttons.push(button);
+    }
+    this.onMove((index) => {
+      let count = this.items.length - 2 * this.offset;
+      let activeButton =
+        buttons[
+          Math.floor(
+            ((index - this.offset) % count) / this.options.slidesToScroll
+          )
+        ];
+      if (activeButton) {
+        buttons.forEach((button) =>
+          button.classList.remove("carousel__pagination__button--active")
+        );
+        activeButton.classList.add("carousel__pagination__button--active");
+      }
+    });
+  }
 
   /**
    *

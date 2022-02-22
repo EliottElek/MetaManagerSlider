@@ -169,18 +169,18 @@ class Carousel {
     if (this.options.loop === true) {
       return;
     }
-    this.onMove((index) => {
-      if (index === 0 || index === 1) {
-        prevButton.classList.add("carousel__prev--hidden");
-      } else {
-        prevButton.classList.remove("carousel__prev--hidden");
-      }
-      if (this.items[this.currentItem + this.slidesVisible] === undefined) {
-        nextButton.classList.add("carousel__next--hidden");
-      } else {
-        nextButton.classList.remove("carousel__next--hidden");
-      }
-    });
+    // this.onMove((index) => {
+    //   if (index === 0 || index === 1) {
+    //     prevButton.classList.add("carousel__prev--hidden");
+    //   } else {
+    //     prevButton.classList.remove("carousel__prev--hidden");
+    //   }
+    //   if (this.items[this.currentItem + this.slidesVisible] === undefined) {
+    //     nextButton.classList.add("carousel__next--hidden");
+    //   } else {
+    //     nextButton.classList.remove("carousel__next--hidden");
+    //   }
+    // });
   }
 
   /**
