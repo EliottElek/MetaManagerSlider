@@ -40,7 +40,7 @@ class CarouselMobile {
     this.currentItem = 0;
     this.moveCallbacks = [];
     this.offset = 0;
-    this.animationDuration = 1;
+    this.animationDuration = 0.3;
     // Modification du DOM
     this.root = this.createDivWithClass("carousel__mobile");
     this.container = this.createDivWithClass("carousel__container__mobile");
@@ -109,7 +109,7 @@ class CarouselMobile {
     this.items[index]
       .getElementsByClassName("item__content__mobile")[0]
       .classList.add("active_item");
-    this.items[index].style.transition = `${this.animationDuration}s ease`;
+    this.items[index].style.transition = `${this.animationDuration}s ease!important`;
     // this.items[index].style.transform = `translate3d(0, -20%, 0)`;
     this.container.offsetHeight; // force repaint
     this.container.offsetHeight; // force repaint
@@ -273,7 +273,7 @@ class CarouselMobile {
       ],
       {
         // timing options
-        duration: 500,
+        duration: 300,
         iterations: 1,
       }
     );
@@ -287,7 +287,7 @@ class CarouselMobile {
         ],
         {
           // timing options
-          duration: 500,
+          duration: 300,
           iterations: 1,
         }
       );
@@ -297,7 +297,7 @@ class CarouselMobile {
     this.items[index]
       .getElementsByClassName("item__content__mobile")[0]
       .classList.add("active_item");
-    this.items[index].style.transition = `${this.animationDuration}s ease`;
+    this.items[index].style.transition = `${this.animationDuration}s ease!important`;
     // this.items[index].style.transform = `translate3d(0, -20%, 0)`;
     this.container.offsetHeight; // force repaint
 
